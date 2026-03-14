@@ -181,21 +181,32 @@
                 <button onclick="tikla3()" class="btn" style="margin: 30px auto 10px; display: block;">Sevdiğim Şeyler</button>
                 <p id="yazi3" style="color: #f0f0f0; text-align: left; line-height: 1.6;><p>
             </div>
+            <div>
+                    <button onclick="tikla1()">Hakkımda</button>
+                    <button onclick="tikla2()">İlgi Alanlarım</button>
+                    <button onclick="tikla3()">Hobilerim</button>
+
+                    <div id="yazi1"></div>
+                    <div id="yazi2"></div>
+                    <div id="yazi3"></div>
+            </div>
         </div>
      </div>
 
      <script>
-        function tikla1() {
-            document.getElementById("yazi1").innerHTML = "7 Nisan 2005'de doğdum. Kütahyalıyım. Şu an Bandırma On Yedi Eylül Üniversitesi Ekonometri ikinci sınıf öğrencisiyim.Aynı zamanda Anadolu açıköğretim üniversitesinde Bilgisayar programcılığı ikinci sınıf öğrencisiyim."
-                    };
-        
-        
-        // Sayfa açıldığında otomatik içerik yüklemenmesi için
-                    window.onload = function() {
-            tikla1();
-            tikla2();
-            tikla3();
-        };
+        // Hakkımda bilgisi
+                    function tikla1() { 
+                        document.getElementById("yazi1").innerHTML = "7 Nisan 2005'de doğdum. Kütahyalıyım. Şu an Bandırma On Yedi Eylül Üniversitesi Ekonometri ikinci sınıf öğrencisiyim. Aynı zamanda Anadolu açıköğretim üniversitesinde Bilgisayar programcılığı ikinci sınıf öğrencisiyim.";
+                    }
+       // İlgi alanları bilgisi
+                    function tikla2() {
+                        document.getElementById("yazi2").innerHTML = "Yapay Zeka üzerinden müzik oluşturmayı, web sitesi kurup tasarım yapmakta ilgileniyorum. Yeni çıkan teknoloji ürünleri inceleyip özelliklerini keşfediyorum. Yazılım dilleri konusunda kendimi geliştirme aşamasındayım. Python, CSS bilgisine sahibim.";
+                    }
+
+      // Sevdiğim şeyler bilgisi
+                    function tikla3() {
+                        document.getElementById("yazi3").innerHTML = "Yazı yazmayı severim, matematik de matrisleri ve geometri çözmeyi severim. Kişilik olarak 'gamer girl' nitelendirebilirim. Her türlü bilgisayar oyunları oynamayı severim.";
+                    }
      </script>
 </body>
 
