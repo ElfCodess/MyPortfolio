@@ -151,7 +151,7 @@
 <body>
     <div class="hero-section">
         <div class="hero-overlay">
-            <h1>Welcome To Elf!</h1>
+            <h1>Welcome To My World!</h1>
             
             <div class="button-container">
                 <a href="https://linkedin.com/in/elif-yavuz" target="_blank">
@@ -172,30 +172,34 @@
             </div>
             
             <div class="content-box">
-                <button onclick="tikla()" class="btn" style="margin: 10px auto; display: block;">Özgeçmiş</button>
+                <button onclick="tikla1()" class="btn" style="margin: 10px auto; display: block;">Özgeçmişim</button>
                 <p id="yazi1" style="color: #f0f0f0; text-align: left; line-height: 1.6;"></p>
                 
                 <button onclick="tikla2()" class="btn" style="margin: 30px auto 10px; display: block;">İlgi Alanlarım</button>
                 <p id="yazi2" style="color: #f0f0f0; text-align: left; line-height: 1.6;"></p>
+
+                <button onclick="tikla3()" class="btn" style="margin: 30px auto 10px; display: block;">Sevdiğim Şeyler</button>
+                <p id="yazi3" style="color: #f0f0f0; text-align: left; line-height: 1.6;><p>
             </div>
         </div>
     </div>
 
     <script>
-        function tikla() {
+        function tikla1() {
             document.getElementById("yazi1").innerHTML = "7 Nisan 2005'de doğdum. Kütahyalıyım. Şu an Bandırma On Yedi Eylül Üniversitesi Ekonometri ikinci sınıf öğrencisiyim.Aynı zamanda Anadolu açıköğretim üniversitesinde Bilgisayar programcılığı ikinci sınıf öğrencisiyim.";
-        }
+                    }
         function tikla2() {
-            document.getElementById ("yazi2").innerHTML = "Yapay Zeka üzerinden müzik oluşturmayı, web sitesi kurup tasarım yapmakta ilgileniyorum. Yeni çıkan teknoloji ürünleri inceleyip özelliklerini keşfediyorum. Yazılım dilleri konusunda kendimi geliştirme aşamasındayım. Pyhton,css bilgisine sahibim. Şu ana kadar python dilinde küçük projeler üzerinde ilgileniyorum. Boş zamanlarımda web tasarımı yapmakla meşgulüm.";
-        }
+            document.getElementById("yazi2").innerHTML = "Yapay Zeka üzerinden müzik oluşturmayı, web sitesi kurup tasarım yapmakta ilgileniyorum. Yeni çıkan teknoloji ürünleri inceleyip özelliklerini keşfediyorum. Yazılım dilleri konusunda kendimi geliştirme aşamasındayım. Pyhton,css bilgisine sahibim. Şu ana kadar python dilinde küçük projeler üzerinde ilgileniyorum. Boş zamanlarımda web tasarımı yapmakla meşgulüm.";
+                    }
         function tikla3() {
             document.getElementById("yazi3").innerHTML = "Yazı yazmayı severim, matematik de matrisleri ve geometri çözmeyi severim. Kişilik olarak 'gamer girl' nitelendirebilirim. Her türlü bilgisayar oyunları oynamayı severim. Steam üzerinden oynadıklarımı görebilirsiniz. Bilgisayar dışında bilardo ve 3 top oynamayı severim. Müziklerde küçüklüğümden beri Rock n Roll etkisinde büyümüş bir kızım. Gitar çalmayı ve şarkı sözlerini yazmayı severim. Suno üzerinden yazdığım sözlere ulaşabilirsiniz. Tabi ki de yapay zeka tarafından yapılan şarkılar bana ait değildir. sadece sözleri bana aittir.";
-        }
+                    }
         
         // Sayfa açıldığında otomatik içerik yüklemenmesi için
-        window.onload = function() {
+                    window.onload = function() {
             tikla();
             tikla2();
+            tika3();
         };
     </script>
 </body>
