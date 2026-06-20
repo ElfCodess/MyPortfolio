@@ -9,11 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
          
     <style>
+        /* ==========================================================================
+           1. RENK PALETİM
+           ========================================================================== */
         :root {
             --color-black: #000000;
             --color-dark-purple: #41326d;
             --color-light-purple: #8e7cc3;
-            --color-text-gray: #b0b0b0;
+            --color-white: #ffffff;
         }
 
         * {
@@ -27,8 +30,9 @@
         }
 
         body {
-            background-color: var(--color-black);
-            color: var(--color-text-gray);
+            background: linear-gradient(to top, var(--color-black) 0%, var(--color-dark-purple) 100%);
+            background-attachment: fixed;
+            color: var(--color-white);
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
             line-height: 1.6;
@@ -36,7 +40,7 @@
 
         h1, h2, h3, h4 {
             font-family: 'Cinzel', serif;
-            color: var(--color-light-purple);
+            color: var(--color-white);
             letter-spacing: 2px;
         }
 
@@ -45,22 +49,9 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        .goth-blur-bg {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: rgba(142, 124, 195, 0.08); 
-            filter: blur(120px);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .blur-1 { top: 10%; left: -10%; }
-        .blur-2 { top: 40%; right: -10%; background: rgba(65, 50, 109, 0.15); }
-        .blur-3 { bottom: 5%; left: 15%; }
 
         /* ==========================================================================
-           BÖLÜM (SECTION) AYARLARI
+           2. BÖLÜM
            ========================================================================== */
         section {
             min-height: 100vh;
@@ -69,7 +60,7 @@
             flex-direction: column;
             justify-content: center;
             position: relative;
-            border-bottom: 1px solid rgba(65, 50, 109, 0.3); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
         }
 
         .section-title {
@@ -79,23 +70,18 @@
             margin-bottom: 60px;
             position: relative;
             display: inline-block;
+            color: var(--color-light-purple);
         }
 
-        /* Simge Belirteci (⚝) */
         .section-title::after {
             content: ' ⚝';
-            color: var(--color-dark-purple);
+            color: var(--color-white);
             font-size: 20px;
             margin-left: 15px;
         }
 
-        .section-content {
-            position: relative;
-            z-index: 2;
-        }
-
         /* ==========================================================================
-           BÖLÜM 1
+           3. HERO (AÇILIŞ) KISMI
            ========================================================================== */
         #hero {
             display: grid;
@@ -109,40 +95,38 @@
             line-height: 1.1;
             margin-bottom: 20px;
             letter-spacing: -1px;
-            background: linear-gradient(90deg, var(--color-light-purple), var(--color-dark-purple));
+            background: linear-gradient(90deg, var(--color-light-purple), #b19cd9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero-text p {
             font-size: 18px;
-            color: #999;
-            max-width: 500px;
+            margin-bottom: 10px;
         }
-        
+
         .silhouette-wrapper {
             position: relative;
             height: 550px;
-            border: 1px solid var(--color-dark-purple);
-            background: linear-gradient(180deg, var(--color-dark-purple) 0%, var(--color-black) 100%);
+            border: 2px solid var(--color-light-purple);
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+            box-shadow: 0 10px 40px rgba(65, 50, 109, 0.6);
         }
         
         .silhouette-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%) brightness(0.4) contrast(1.4); 
-            transition: all 0.5s ease;
+            transition: transform 0.5s ease;
         }
         
         .silhouette-wrapper:hover .silhouette-img {
-            filter: grayscale(100%) brightness(0.6) contrast(1.2);
+            transform: scale(1.05);
         }
 
         /* ==========================================================================
-           BÖLÜM 2 & 3
+           4. LİSTE DÜZENİ 
            ========================================================================== */
         .goth-list {
             max-width: 800px;
@@ -152,48 +136,127 @@
             position: relative;
             padding-left: 35px;
             padding-bottom: 40px;
-            border-left: 1px solid var(--color-dark-purple); 
-        }
-
-        .list-item:last-child {
-            border-left: 1px solid transparent; 
+            border-left: 2px solid var(--color-light-purple); 
         }
 
         .list-item::before {
             content: '⚝';
             position: absolute;
-            left: -6px;
+            left: -8px;
             top: 5px;
             background: var(--color-black);
-            color: var(--color-light-purple); 
+            color: var(--color-light-purple);
             font-size: 14px;
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             text-align: center;
         }
 
         .list-date {
-            font-size: 12px;
+            display: inline-block;
+            font-size: 13px;
+            font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--color-light-purple); 
-            margin-bottom: 5px;
-            opacity: 0.8;
+            letter-spacing: 2px;
+            background-color: var(--color-white);
+            color: var(--color-black);
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
         }
 
         .list-item h3 {
             font-size: 20px;
             margin-bottom: 10px;
-            color: #fff; 
         }
 
         .list-item p {
-            color: var(--color-text-gray);
             font-size: 15px;
+            color: #e0e0e0;
         }
 
         /* ==========================================================================
-           BÖLÜM 4
+           5. YETENEKLER 
+           ========================================================================== */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            perspective: 1000px; 
+        }
+
+        .glowing-card {
+            position: relative;
+            width: 260px;
+            background-color: var(--color-black);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(142, 124, 195, 0.2);
+            box-shadow: 0 0 20px 2px rgba(142, 124, 195, 0.4);
+        }
+
+        .glowing-card::before {
+            content: "";
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, var(--color-light-purple), var(--color-dark-purple), var(--color-black));
+            z-index: -1;
+            border-radius: 16px;
+            filter: blur(15px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .glowing-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--color-white);
+        }
+
+        .glowing-card p {
+            font-size: 14px;
+            color: var(--color-black);
+            background-color: var(--color-white);
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .glowing-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-light-purple);
+            box-shadow: 0 0 30px 5px rgba(142, 124, 195, 0.7);
+        }
+
+        .glowing-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        .glowing-card:active {
+            animation: shake 0.5s;
+        }
+
+        /* ==========================================================================
+           6. PROJELER VE İLETİŞİM
            ========================================================================== */
         .project-grid {
             display: grid;
@@ -204,122 +267,40 @@
         .project-card {
             position: relative;
             height: 400px;
-            border: 1px solid rgba(65, 50, 109, 0.4); 
+            border: 1px solid rgba(142, 124, 195, 0.4);
             overflow: hidden;
-            background: var(--color-black);
+            border-radius: 10px;
         }
 
         .project-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%) blur(5px) brightness(0.3);
-            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: all 0.6s ease;
         }
 
         .project-info {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
+            bottom: 0; left: 0; width: 100%;
             padding: 30px;
-            background: linear-gradient(to top, var(--color-black) 10%, rgba(65, 50, 109, 0.6) 100%);
-            z-index: 2;
-            opacity: 0.8;
-            transition: all 0.4s ease;
+            background: linear-gradient(to top, var(--color-black) 20%, transparent 100%);
         }
 
-        .project-info h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: var(--color-light-purple);
-        }
-
-        .project-info p {
-            font-size: 13px;
-            color: #ccc;
-        }
-
-        .project-card:hover .project-img {
-            filter: grayscale(50%) sepia(30%) hue-rotate(220deg) blur(0px) brightness(0.6);
-            transform: scale(1.03);
-        }
-
-        .project-card:hover .project-info {
-            opacity: 1;
-            background: linear-gradient(to top, var(--color-black) 10%, rgba(142, 124, 195, 0.5) 100%);
-        }
-
-        /* ==========================================================================
-           BÖLÜM 5
-           ========================================================================== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .skill-box {
-            background: linear-gradient(145deg, rgba(65, 50, 109, 0.15) 0%, rgba(0,0,0,0.9) 100%);
-            border: 1px solid rgba(65, 50, 109, 0.5);
-            padding: 35px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            position: relative;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
+        .project-info h3 { color: var(--color-light-purple); }
         
-        .skill-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--color-light-purple);
+        .project-card:hover .project-img {
+            transform: scale(1.05);
         }
 
-        .skill-box::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: linear-gradient(to bottom, var(--color-light-purple), var(--color-dark-purple));
-        }
-
-        .skill-box h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: var(--color-light-purple);
-        }
-
-        .skill-box p {
-            font-size: 14px;
-            color: var(--color-text-gray);
-        }
-
-        /* ==========================================================================
-           BÖLÜM 6
-           ========================================================================== */
         .contact-wrapper {
             text-align: center;
-            border: 1px solid var(--color-dark-purple);
+            border: 2px solid var(--color-dark-purple);
             padding: 80px 40px;
-            background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(65, 50, 109, 0.3) 100%);
+            background: rgba(0,0,0,0.6);
             backdrop-filter: blur(15px);
             max-width: 900px;
             margin: 0 auto;
-            width: 100%;
-        }
-
-        .contact-wrapper h3 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            letter-spacing: 4px;
-            color: var(--color-light-purple);
-        }
-
-        .contact-wrapper p {
-            color: #aaa;
-            margin-bottom: 40px;
-            font-size: 15px;
+            border-radius: 20px;
         }
 
         .social-links {
@@ -327,86 +308,45 @@
             justify-content: center;
             gap: 40px;
             flex-wrap: wrap;
+            margin-bottom: 30px;
         }
 
         .social-links a {
             font-family: 'Cinzel', serif;
-            font-size: 14px;
-            letter-spacing: 2px;
-            color: var(--color-text-gray);
-            border-bottom: 1px dashed rgba(142, 124, 195, 0.5);
+            font-size: 16px;
+            color: var(--color-white);
+            border-bottom: 2px solid var(--color-dark-purple);
             padding-bottom: 5px;
         }
 
         .social-links a:hover {
             color: var(--color-light-purple);
-            border-bottom: 1px solid var(--color-light-purple);
+            border-color: var(--color-light-purple);
         }
 
-        /* ==========================================================================
-           QR KOD KISMI
-           ========================================================================== */
         .qr-container {
-            margin: 40px auto 0 auto;
-            width: 160px;
-            height: 160px;
-            border: 1px solid var(--color-dark-purple);
+            margin: 0 auto;
+            width: 160px; height: 160px;
+            border: 2px solid var(--color-light-purple);
+            border-radius: 15px;
             padding: 10px;
-            background: rgba(65, 50, 109, 0.05);
-            backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.5s ease;
-            position: relative;
+            background: var(--color-white);
         }
 
         .qr-code {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             object-fit: contain;
-            filter: grayscale(100%) contrast(1.2) brightness(0.9);
-            mix-blend-mode: lighten; 
-            transition: all 0.5s ease;
         }
 
-        .qr-container:hover {
-            border-color: var(--color-light-purple);
-            box-shadow: 0 0 20px rgba(142, 124, 195, 0.3);
-        }
-
-        .qr-container:hover .qr-code {
-            filter: grayscale(0%) contrast(1.1) brightness(1.2);
-        }
-
-        .qr-label {
-            font-family: 'Cinzel', serif;
-            font-size: 11px;
-            letter-spacing: 3px;
-            color: var(--color-light-purple);
-            margin-top: 15px;
-            text-transform: uppercase;
-        }
-
-        /* Mobil üzerinden gösterimi */
+        /* Mobil Uyum */
         @media (max-width: 968px) {
-            #hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-                padding-top: 140px;
-            }
-            .hero-text h1 { font-size: 42px; }
-            .hero-text p { margin: 0 auto; }
-            .silhouette-wrapper { height: 400px; max-width: 400px; margin: 0 auto; width: 100%; }
+            #hero { grid-template-columns: 1fr; text-align: center; padding-top: 120px; }
+            .silhouette-wrapper { height: 400px; max-width: 400px; margin: 0 auto; }
             section { padding: 80px 5%; }
         }
     </style>
 </head>
 <body>
-
-    <div class="goth-blur-bg blur-1"></div>
-    <div class="goth-blur-bg blur-2"></div>
-    <div class="goth-blur-bg blur-3"></div>
 
     <section id="hero">
         <div class="hero-text">
@@ -414,7 +354,7 @@
             <p>7 Nisan 2005 Doğumluyum. Kütahya da doğdum ve lise mezuniyetime kadar Kütahya da yaşadım.</p>
             <p>İki üniversite okuyorum. İlk üniversitemi Bandırma da kazandım ve Bandırma da yaşıyorum.</p>
             <br>
-            <p>İlgi Alanlarım: Kendimi geliştirmek adına yeni bir program dili öğrneiyorum.</p>
+            <p>İlgi Alanlarım: Kendimi geliştirmek adına yeni bir program dili öğreniyorum.</p>
             <p>Grafik Tasarımıyla ilgileniyorum. Photoshop ve Illustrator alanında ufak projeler yaptım.</p>
             <p>Daha çok web sitesi ve tasarımını kurmakla uğraşıyorum.</p>
             <br>
@@ -422,7 +362,7 @@
             <p>Sadece müzik üzerinden değil pyhton alanında küçük projelerde yapmaktayım.</p>
         </div>
         <div class="silhouette-wrapper">
-            <img src="3.png" alt="Silhouette" class="silhouette-img">
+            <img src="3.png" alt="Elif Yavuz" class="silhouette-img">
         </div>
     </section>
 
@@ -473,7 +413,7 @@
                 <img src="5.png" alt="Proje 1" class="project-img">
                 <div class="project-info">
                     <h3>Veri Analizi</h3>
-                    <p>Python | EViews </p>
+                    <p style="color: white;">Python | EViews </p>
                 </div>
             </div>
 
@@ -481,7 +421,7 @@
                 <img src="4.png" alt="Proje 2" class="project-img">
                 <div class="project-info">
                     <h3>Web Tasarımları</h3>
-                    <p>Github üzerinde HTML,CSS,JS</p>
+                    <p style="color: white;">Github üzerinde HTML,CSS,JS</p>
                 </div>
             </div>
 
@@ -489,7 +429,7 @@
                 <img src="7.png" alt="Proje 3" class="project-img">
                 <div class="project-info">
                     <h3>Prompt Engineering kodlamaları</h3>
-                    <p>C# | JavaScript</p>
+                    <p style="color: white;">C# | JavaScript</p>
                 </div>
             </div>
 
@@ -500,35 +440,44 @@
         <h2 class="section-title">04 / YETENEKLER</h2>
         <div class="section-content skills-grid">
             
-            <div class="skill-box">
+            <div class="glowing-card">
                 <h3>HTML, CSS, PHP</h3>
                 <p>ORTA-İLERİ SEVİYE</p>
             </div>
 
-            <div class="skill-box">
-                <h3>PYHTON</h3>
+            <div class="glowing-card">
+                <h3>PYTHON</h3>
                 <p>ORTA-İLERİ SEVİYE</p>
             </div>
-            <div class="skill-box">
+            
+            <div class="glowing-card">
                 <h3>C#, MYSQL</h3>
                 <p>TEMEL SEVİYE</p>
             </div>
-            <div class="skill-box">
-                <h3>EVİEWS</h3>
+            
+            <div class="glowing-card">
+                <h3>EVIEWS</h3>
                 <p>TEMEL SEVİYE</p>
             </div>
-            <div class="skill-box">
-                <h3>MİCROSOFT EXCEL</h3>
+            
+            <div class="glowing-card">
+                <h3>MICROSOFT EXCEL</h3>
                 <p>ORTA-İLERİ SEVİYE</p>
             </div>
-            <div class="skill-box">
-                <h3>WEB TASARIMI VE KURULUMU</h3>
+            
+            <div class="glowing-card">
+                <h3>WEB TASARIMI</h3>
+                <p>UZMAN</p>
             </div>
-            <div class="skill-box">
-                <h3>DİJİTAL GRAFİK & AFİŞ TASARIMI</h3>
+            
+            <div class="glowing-card">
+                <h3>GRAFİK & AFİŞ TASARIMI</h3>
+                <p>DENEYİMLİ</p>
             </div>
-            <div class="skill-box">
-                <h3>TOPLULUK & İÇERİK YÖNETİMİ</h3>
+            
+            <div class="glowing-card">
+                <h3>İÇERİK YÖNETİMİ</h3>
+                <p>GELİŞTİRİCİ</p>
             </div>
 
         </div>
@@ -536,7 +485,7 @@
 
     <section id="contact">
         <div class="section-content contact-wrapper">
-            <h3>İLETİŞİM ADRESLERİ</h3>
+            <h3 style="color: var(--color-light-purple); letter-spacing: 4px; margin-bottom: 20px;">İLETİŞİM ADRESLERİ</h3>
             
             <div class="social-links">
                 <a href="mailto:ey.elifyavuz43@gmail.com" target="_blank">E-POSTA</a>
@@ -546,7 +495,7 @@
             <div class="qr-container">
                 <img src="the.elf.yavuz_qr.png" alt="Instagram QR" class="qr-code">
             </div>
-            <div class="qr-label">[ Tarat ve Takip Et ]</div>
+            <div style="margin-top: 15px; font-weight: bold; letter-spacing: 2px;">[ TARAT VE TAKİP ET ]</div>
         </div>
     </section>
 
