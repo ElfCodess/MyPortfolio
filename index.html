@@ -45,15 +45,10 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-
-        /* ==========================================================================
-           ARKA PLAN PUS EFEKTLERİ
-           ========================================================================== */
         .goth-blur-bg {
             position: absolute;
             width: 500px;
             height: 500px;
-            /* Pus efektine koyu mor/açık mor karışımı bir saydamlık verdik */
             background: rgba(142, 124, 195, 0.08); 
             filter: blur(120px);
             border-radius: 50%;
@@ -246,7 +241,6 @@
         }
 
         .project-card:hover .project-img {
-            /* Hover durumunda mor bir ton katıyoruz (sepia ve hue-rotate kullanarak) */
             filter: grayscale(50%) sepia(30%) hue-rotate(220deg) blur(0px) brightness(0.6);
             transform: scale(1.03);
         }
